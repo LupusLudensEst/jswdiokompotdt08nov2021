@@ -1,0 +1,25 @@
+{
+    "name": "wkompot",
+    "version": "1.0.0",
+    "description": "Kompot UI tests with WebdriverIO",
+    "scripts": {
+        "test": "npx wdio run wdio.conf.js",
+        "wdio": "wdio run wdio.conf.js"
+    },
+    "author": "Vic Gurov",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.16.0",
+        "@babel/preset-env": "^7.16.0",
+        "@babel/register": "^7.16.0",
+        "@wdio/allure-reporter": "^7.16.3",
+        "@wdio/cli": "^7.16.4",
+        "@wdio/devtools-service": "^7.16.4",
+        "@wdio/local-runner": "^7.16.4",
+        "@wdio/mocha-framework": "^7.16.4",
+        "@wdio/spec-reporter": "^7.16.4"
+    },
+    "dependencies": {
+        "cmd": "^0.1.0"
+    }
+}
