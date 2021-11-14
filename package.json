@@ -3,8 +3,7 @@
     "version": "1.0.0",
     "description": "Kompot UI tests with WebdriverIO",
     "scripts": {
-        "test": "npx wdio run wdio.conf.js",
-        "wdio": "wdio run wdio.conf.js"
+        "test": "npx wdio run wdio.conf.js"
     },
     "author": "Vic Gurov",
     "license": "ISC",
