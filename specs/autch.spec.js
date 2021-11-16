@@ -2,7 +2,7 @@ import LoginPage from '../pages/login.page'
 import ProfilePage from '../pages/profile.page'
 
 describe('Auth', function () {
-    it ('Succesful log in', async function () {
+    it ('Successful log in', async function () {
         await LoginPage.open();
         await expect(LoginPage.buttonSubmit)
             .toBeDisabled();
@@ -20,4 +20,3 @@ describe('Auth', function () {
 });
 
 
-// login: gurovvic@gmail.com password: MyUSA2016!@

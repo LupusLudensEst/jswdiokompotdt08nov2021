@@ -4,9 +4,9 @@ exports.config = {
     ],
     exclude: [
     ],
-    maxInstances: 10,
+    maxInstances: 1,
     capabilities: [{
-        maxInstances: 5,
+        maxInstances: 1,
         //
         browserName: 'chrome',
         acceptInsecureCerts: true
@@ -14,12 +14,14 @@ exports.config = {
     logLevel: 'info',
     bail: 0,
     baseUrl: 'https://kompot.us',
+
     waitforTimeout: 10000,
     connectionRetryTimeout: 30000,
-    connectionRetryCount: 3,
+    connectionRetryCount: 1,
+
     services: ['devtools'],
+    reporters: ['spec'],
     framework: 'mocha',
-    reporters: [['allure', {outputDir: 'allure-results'}]],
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
