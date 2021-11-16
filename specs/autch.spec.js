@@ -1,16 +1,15 @@
+import LoginPage from '../pages/login.page'
+import ProfilePage from '../pages/profile.page'
+
 describe('Auth', function () {
     it ('Succesful log in', async function () {
-        await browser.url('/user/login');
-        await expect ($('.login-form-button'))
+        await LoginPage.open();
+        await expect(LoginPage.buttonSubmit)
             .toBeDisabled();
-        await $('[qa-id="email"]')
-            .setValue('gurovvic@gmail.com');
-        await $('[qa-id="password"]')
-            .setValue('MyUSA2016!@');
-        await $('[class*="login-form-button"]')
-            .click();
-        await expect($('img[alt="avatarIcon"]'))
+        await LoginPage.login('gurovvic@gmail.com', 'MyUSA2016!@')
+        await expect(ProfilePage.iconUser)
             .toBeDisplayed();
+
         const actual = await $("h4").getText(); // "//div[@class='col-md-8']"  'h4' '.col-md-8 > h4' // "//*[normalize-space(.) = 'Reports']" //*[.="Don’t have an account? Create one."] //*[normalize-space(.)="Don’t have an account? Create one."]
         const expected = 'Reports';
         console.log(`Actual text is here: "${actual}" VS expected: "${expected}"`);

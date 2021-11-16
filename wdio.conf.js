@@ -3,7 +3,6 @@ exports.config = {
         './specs/**/*.*.js'
     ],
     exclude: [
-        './specs/example.spec.js', './specs/example.e2e.js'
     ],
     maxInstances: 10,
     capabilities: [{
@@ -14,9 +13,9 @@ exports.config = {
     }],
     logLevel: 'info',
     bail: 0,
-    baseUrl: 'https://kompot.us/user/login',
+    baseUrl: 'https://kompot.us',
     waitforTimeout: 10000,
-    connectionRetryTimeout: 120000,
+    connectionRetryTimeout: 30000,
     connectionRetryCount: 3,
     services: ['devtools'],
     framework: 'mocha',
