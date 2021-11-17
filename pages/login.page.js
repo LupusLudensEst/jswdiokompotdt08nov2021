@@ -8,7 +8,7 @@ class LoginPage extends Page {
     async login (username, password) {
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
-        await expect(this.buttonSubmit).toBeEnabled();
+        await expect(this.buttonSubmit).toBeClickable();
         await this.buttonSubmit.click();
     }
 

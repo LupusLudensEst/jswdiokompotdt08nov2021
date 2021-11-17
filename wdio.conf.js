@@ -1,6 +1,6 @@
 exports.config = {
     specs: [
-        './specs/**/*.*.js'
+        './specs/**/*.spec.js'
     ],
     exclude: [
     ],
