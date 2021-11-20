@@ -2,8 +2,11 @@ import LoginPage from '../pages/login.page'
 import ProfilePage from '../pages/profile.page'
 
 describe('Auth', function () {
-    it ('Successful log in', async function () {
+    beforeEach(async function () {
         await LoginPage.open();
+    });
+
+    it ('Successful log in', async function () {
         await expect(LoginPage.buttonSubmit)
             .toBeDisabled();
         await LoginPage.login('gurovvic@gmail.com', 'MyUSA2016!@')
@@ -15,6 +18,5 @@ describe('Auth', function () {
         console.log(`Actual text is here: "${actual}" VS expected: "${expected}"`);
         await  expect($("//div[@class='col-md-8']"))
             .toHaveText(expected)
-
     });
 });
