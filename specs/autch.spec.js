@@ -19,4 +19,25 @@ describe('Auth', function () {
         await  expect($("//div[@class='col-md-8']"))
             .toHaveText(expected)
     });
+
+    it ('Log in attempt with invalid username/password', async function () {
+        await LoginPage.login('gurovvic_invalid@gmail.com', 'MyUSA2016!@_invalid');
+        await expect(LoginPage.notification).toHaveText('Email is not registered');
+    });
+
+    it ('Log in attempt with valid username invalid password', async function () {
+        await LoginPage.login('gurovvic@gmail.com', 'MyUSA2016!@_invalid');
+        await expect(LoginPage.notification).toHaveText('Incorrect password');
+    });
+
+    it.only ('Credentials are required', async function () {
+        await LoginPage.inputUsername.setValue('test');
+        await LoginPage.inputUsername.smartClear();
+        await expect(LoginPage.loginError).toHaveText('Required');
+        await LoginPage.inputPassword.setValue('test');
+        await LoginPage.inputPassword.smartClear();
+        await expect(LoginPage.passwordError).toHaveText('Required');
+
+    });
+
 });
